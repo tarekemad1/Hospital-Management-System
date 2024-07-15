@@ -8,6 +8,33 @@ typedef enum
     regular,
     urgent
 } status;
+void add_patient();
+void print_patients();
+void get_next();
+int main()
+{
+    int choice;
+    while (true)
+    {
+        cout << "Enter your choice:" << endl;
+        cout << "1) Add new patient  " << endl;
+        cout << "2) Print all patients" << endl;
+        cout << "3) Get next patient " << endl;
+        cout << "4) EXIT" << endl;
+        cin >> choice;
+        if (choice == 1)
+            add_patient();
+        else if (choice == 2)
+            print_patients();
+        else if (choice == 3)
+            get_next();
+        else if (choice == 4)
+            break;
+        else
+            cout << "undefined choice " << endl;
+    }
+    return 0;
+}
 void add_patient()
 {
 
@@ -68,7 +95,7 @@ void print_patients()
                 cout << " regular" << endl;
         }
     }
-};
+}
 void get_next()
 {
     int dprtmnt = 0;
@@ -95,28 +122,4 @@ void get_next()
             }
         }
     }
-}
-int main()
-{
-    int choice;
-    while (true)
-    {
-        cout << "Enter your choice:" << endl;
-        cout << "1) Add new patient  " << endl;
-        cout << "2) Print all patients" << endl;
-        cout << "3) Get next patient " << endl;
-        cout << "4) EXIT" << endl;
-        cin >> choice;
-        if (choice == 1)
-            add_patient();
-        else if (choice == 2)
-            print_patients();
-        else if (choice == 3)
-            get_next();
-        else if (choice == 4)
-            break;
-        else
-            cout << "undefined choice " << endl;
-    }
-    return 0;
 }
